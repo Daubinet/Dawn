@@ -1,0 +1,8 @@
+Bin/
+Obj/
+Libraries/
+Media/
+*ipch*
+*.sdf*
+*.suo*
+*Debug*

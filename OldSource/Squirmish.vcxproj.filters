@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{c5daf7b7-f41e-4a87-9cb8-92930763e300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hud">
+      <UniqueIdentifier>{6606357a-3bca-415f-b906-82f488af1dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hud">
+      <UniqueIdentifier>{6675b279-0696-4032-a657-f79383d04634}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{b0bcbdb1-96e1-4be7-b5bd-f393404925bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Contexts">
+      <UniqueIdentifier>{48ff4cac-1ba6-40cf-a2d8-638ca2bdea37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Contexts">
+      <UniqueIdentifier>{09e7dea8-7968-4788-84b1-c000bd123156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Info">
+      <UniqueIdentifier>{dea8b6e8-dac9-4612-b3a2-3f5fee61fd56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Info">
+      <UniqueIdentifier>{8f5137d2-a484-46f4-8c73-3ae8cef214db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{a0e5064a-d834-4564-ae9a-e992a86586cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AuxIrr">
+      <UniqueIdentifier>{ff0fb8bd-d875-4c78-a9b4-ae8199527ca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AuxIrr">
+      <UniqueIdentifier>{c7d760bf-40ec-43a5-ba93-f5839f2aec0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{92e9ae76-d651-4676-9906-798f73f307a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{fafbcae1-aa9c-4bf6-a8fa-6c7614beaa26}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EventReceiver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hud.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestWindow.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="SellingWindow.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="HudWindow.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite2D.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="MOB.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Char.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="CharSelection.h">
+      <Filter>Header Files\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Contexts</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInfo.h">
+      <Filter>Header Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroStats.h">
+      <Filter>Header Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyStats.h">
+      <Filter>Header Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="ExceptionHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Region.h">
+      <Filter>Header Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.h">
+      <Filter>Header Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseConstants.h">
+      <Filter>Header Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimObject.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticObject.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="DroppedWindow.h">
+      <Filter>Header Files\Hud</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite3D.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Particles.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="AuxIrr\CAnimatedMeshSceneNode.h">
+      <Filter>Header Files\AuxIrr</Filter>
+    </ClInclude>
+    <ClInclude Include="AuxIrr\os.h">
+      <Filter>Header Files\AuxIrr</Filter>
+    </ClInclude>
+    <ClInclude Include="AuxIrr\CShadowVolumeSceneNode.h">
+      <Filter>Header Files\AuxIrr</Filter>
+    </ClInclude>
+    <ClInclude Include="AuxIrr\CSkinnedMesh.h">
+      <Filter>Header Files\AuxIrr</Filter>
+    </ClInclude>
+    <ClInclude Include="AuxIrr\CBoneSceneNode.h">
+      <Filter>Header Files\AuxIrr</Filter>
+    </ClInclude>
+    <ClInclude Include="AuxIrr\CMeshSceneNode.h">
+      <Filter>Header Files\AuxIrr</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectType.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EventReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryWindow.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="SellingWindow.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="HudWindow.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite2D.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="MOB.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Char.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestWindow.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="CharSelection.cpp">
+      <Filter>Source Files\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Contexts</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInfo.cpp">
+      <Filter>Source Files\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroStats.cpp">
+      <Filter>Source Files\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="ExceptionHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Region.cpp">
+      <Filter>Source Files\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyStats.cpp">
+      <Filter>Source Files\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseConstants.cpp">
+      <Filter>Source Files\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="Stats.cpp">
+      <Filter>Source Files\Info</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="DroppedWindow.cpp">
+      <Filter>Source Files\Hud</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite3D.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Particles.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxIrr\CAnimatedMeshSceneNode.cpp">
+      <Filter>Source Files\AuxIrr</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxIrr\os.cpp">
+      <Filter>Source Files\AuxIrr</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxIrr\CShadowVolumeSceneNode.cpp">
+      <Filter>Source Files\AuxIrr</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxIrr\CSkinnedMesh.cpp">
+      <Filter>Source Files\AuxIrr</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxIrr\CBoneSceneNode.cpp">
+      <Filter>Source Files\AuxIrr</Filter>
+    </ClCompile>
+    <ClCompile Include="AuxIrr\CMeshSceneNode.cpp">
+      <Filter>Source Files\AuxIrr</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Data\Shaders\sprite3D.hlsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

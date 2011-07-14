@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F161932-B678-471B-A514-3033386C4B23}</ProjectGuid>
+    <RootNamespace>Client</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\Bin\Client\</OutDir>
+    <IntDir>..\Obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+    <OutDir>..\Bin\$(ProjectName)\</OutDir>
+    <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Libraries\Boost;..\Libraries\MySQL++\include;..\Libraries\MySQL\include;..\Libraries\IrrKlang\include;..\Libraries\IrrLicht\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NOMINMAX;_MSVC_VER=160;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;irrlicht.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Libraries\Boost;..\Libraries\MySQL++\lib;..\Libraries\MySQL\lib;..\Libraries\IrrLicht\lib;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy dlls</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\Libraries\IrrLicht\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>..\..\Libraries\IrrLicht\lib\Windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /B /Y /V ..\..\Libraries\IrrLicht\bin\Irrlicht.dll ..\Bin\$(ProjectName)\Irrlicht.dll
+copy /B /Y /V ..\..\Libraries\IrrLicht\bin\irrKlang.dll ..\Bin\$(ProjectName)\irrKlang.dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AI.h" />
+    <ClInclude Include="AuxIrr\CAnimatedMeshSceneNode.h" />
+    <ClInclude Include="AuxIrr\CBoneSceneNode.h" />
+    <ClInclude Include="AuxIrr\CMeshSceneNode.h" />
+    <ClInclude Include="AuxIrr\CShadowVolumeSceneNode.h" />
+    <ClInclude Include="AuxIrr\CSkinnedMesh.h" />
+    <ClInclude Include="AuxIrr\os.h" />
+    <ClInclude Include="CharSelection.h" />
+    <ClInclude Include="DatabaseConstants.h" />
+    <ClInclude Include="DroppedWindow.h" />
+    <ClInclude Include="EnemyStats.h" />
+    <ClInclude Include="ExceptionHandler.h" />
+    <ClInclude Include="AnimObject.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Char.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="EventReceiver.h" />
+    <ClInclude Include="GameInfo.h" />
+    <ClInclude Include="Hero.h" />
+    <ClInclude Include="Hud.h" />
+    <ClInclude Include="HudWindow.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="ObjectType.h" />
+    <ClInclude Include="Particles.h" />
+    <ClInclude Include="Region.h" />
+    <ClInclude Include="Sprite3D.h" />
+    <ClInclude Include="StaticObject.h" />
+    <ClInclude Include="Stats.h" />
+    <ClInclude Include="Terrain.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="Water.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="QuestWindow.h" />
+    <ClInclude Include="SellingWindow.h" />
+    <ClInclude Include="Sprite2D.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="MOB.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="HeroStats.h" />
+    <ClInclude Include="NPC.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AuxIrr\CAnimatedMeshSceneNode.cpp" />
+    <ClCompile Include="AuxIrr\CBoneSceneNode.cpp" />
+    <ClCompile Include="AuxIrr\CMeshSceneNode.cpp" />
+    <ClCompile Include="AuxIrr\CShadowVolumeSceneNode.cpp" />
+    <ClCompile Include="AuxIrr\CSkinnedMesh.cpp" />
+    <ClCompile Include="AuxIrr\os.cpp" />
+    <ClCompile Include="CharSelection.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="DatabaseConstants.cpp" />
+    <ClCompile Include="DroppedWindow.cpp" />
+    <ClCompile Include="EnemyStats.cpp" />
+    <ClCompile Include="ExceptionHandler.cpp" />
+    <ClCompile Include="AnimObject.cpp" />
+    <ClCompile Include="Char.cpp" />
+    <ClCompile Include="HudWindow.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MOB.cpp" />
+    <ClCompile Include="Particles.cpp" />
+    <ClCompile Include="QuestWindow.cpp" />
+    <ClCompile Include="Region.cpp" />
+    <ClCompile Include="Sprite3D.cpp" />
+    <ClCompile Include="StaticObject.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="Terrain.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="Water.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="InventoryWindow.cpp" />
+    <ClCompile Include="SellingWindow.cpp" />
+    <ClCompile Include="Sprite2D.cpp" />
+    <ClCompile Include="AI.cpp" />
+    <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="EventReceiver.cpp" />
+    <ClCompile Include="GameInfo.cpp" />
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="Hud.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="HeroStats.cpp" />
+    <ClCompile Include="NPC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Data\Shaders\sprite3D.hlsl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

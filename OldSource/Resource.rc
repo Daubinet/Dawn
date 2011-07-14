@@ -1,0 +1,44 @@
+// include the appropriate header file
+#ifdef _MSVC_VER
+    #include "afxres.h"
+#elif defined(__BORLANDC__)
+    #include "winres.h"
+#else // GCC
+    #include <windows.h>
+#endif
+
+
+// icon for the game
+//IDI_ICON ICON "skirmish.ico"
+
+// definitions for product information
+#define COMPANY		"Smubo Entertainment"
+#define PRODUCT		"Skirmish"
+#define DESCRIPTION	"Skirmish Client"
+#define FILEVER		0,0,0,1
+#define PRODVER		0,0,0,1
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION		FILEVER
+	PRODUCTVERSION	PRODVER
+	FILEFLAGSMASK  	0
+	FILEFLAGS      	0
+	FILEOS         	VOS_NT_WINDOWS32
+	FILETYPE       	VFT_APP
+	FILESUBTYPE    	VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E2" /* 0409 = American English, 04E2 = Latin character set */
+        BEGIN
+            VALUE "CompanyName",      COMPANY
+            VALUE "FileDescription",  DESCRIPTION
+            VALUE "FileVersion",      "FILEVER"
+            VALUE "InternalName",     "client"
+            VALUE "LegalCopyright",   "(c) 2011 " COMPANY
+            VALUE "OriginalFilename", "client.exe"
+            VALUE "ProductName",      PRODUCT
+            VALUE "ProductVersion",   "PRODVER"
+        END
+    END
+END
