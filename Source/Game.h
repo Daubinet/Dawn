@@ -4,6 +4,7 @@
 #include <Ogre.h>
 #include <OgreWindowEventUtilities.h>
 #include "EventManager.h"
+#include "StaticObject.h"
 
 class Game
 {
@@ -19,7 +20,8 @@ private:
 	Ogre::SceneManager *_sceneManager;
 	Ogre::Camera *_camera;
 	EventManager *_handler;
-
+	StaticObject* _ninja;
+	
 };
 
 #endif // __GAME_H

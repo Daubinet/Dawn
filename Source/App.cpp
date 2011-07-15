@@ -83,7 +83,24 @@ void App::initialize()
 
 	game.initialize(sceneMgr, camera, handler);
 }
+void App::DestroyWindow()
+{
+	if(sceneMgr != NULL){
+		sceneMgr->destroyAllCameras();
+		sceneMgr->destroyAllEntities();
+		sceneMgr->destroyAllParticleSystems();
+		sceneMgr->destroyAllLights();
+		sceneMgr->destroyAllManualObjects();
+		sceneMgr->destroyAllAnimations();
+		sceneMgr->destroyAllMovableObjects();
+	}
 
+	if(window != NULL)
+		window->destroy();
+	if(ogre != NULL)
+		ogre->destroyAllRenderQueueInvocationSequences();
+	
+}
 void App::mainLoop()
 {
 	gQuit = false;
@@ -94,9 +111,9 @@ void App::mainLoop()
 		game.update();
 		game.draw();
 
-		Ogre::WindowEventUtilities::messagePump();
-
 		ogre->renderOneFrame();
+
+		Ogre::WindowEventUtilities::messagePump();
 	}
 }
 
@@ -115,5 +132,6 @@ int main (int argc, char *argv[])
 	App app;
 	app.initialize();
 	app.mainLoop();
+	app.DestroyWindow();
 	return 0;
 }

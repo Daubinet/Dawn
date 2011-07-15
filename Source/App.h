@@ -14,6 +14,7 @@ public:
 
 	void initialize();
 	void mainLoop();
+	void DestroyWindow();
 
 private:
 	Ogre::Root *ogre;
