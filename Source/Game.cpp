@@ -23,8 +23,9 @@ void Game::initialize(Ogre::SceneManager *sceneManager, Ogre::Camera *camera, Ev
 	
 	//Loading and adding demo model to screen
 	Ogre::SceneNode* _ninjanode = _sceneManager->getRootSceneNode()->createChildSceneNode("Ninja");
-	_ninjanode->setPosition( 0, 1, 750);
-	_ninja = new StaticObject("Ninja", _sceneManager->createEntity("Ninja","Ninja.mesh"), _ninjanode);
+	_ninjanode->setPosition( 0, 10, 750);
+	
+	_ninja = new StaticObject("Ninja", _sceneManager->createEntity("Ninja","WereVixen.mesh"), _ninjanode);
 	_ninjanode->attachObject(_ninja->getEntity());
 
 
@@ -39,7 +40,7 @@ void Game::initialize(Ogre::SceneManager *sceneManager, Ogre::Camera *camera, Ev
 
 	// set its position, direction  
 	_camera->setPosition(Ogre::Vector3(0,100,500)); 
-	_camera->lookAt(Ogre::Vector3(0,0,0));
+	_camera->lookAt(_ninja->position());
 
 	// set the near clip distance 
 	_camera->setNearClipDistance(5);  
