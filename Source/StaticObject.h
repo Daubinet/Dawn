@@ -29,8 +29,12 @@ public:
 	
 	inline Ogre::Vector3 position() const
 	{
-		return (_objnode != NULL) ?  _objnode->getPosition() :  Ogre::Vector3(1.0, 1.0, 1.0);
+		if(_objnode == NULL)
+			return Ogre::Vector3(1.0, 1.0, 1.0);
+		else
+			return _objnode->getPosition();
 	}
+
 	inline Ogre::Vector3 rotation() const
 	{ 
 		return Ogre::Vector3();
@@ -38,8 +42,8 @@ public:
 
 private:
 	Ogre::Entity* _object;
+	Ogre::SceneNode* _objnode;
 	std::string _objname;
-	Ogre::SceneNode* _objnode ;
 };
 
 

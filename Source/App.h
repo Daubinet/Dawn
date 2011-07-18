@@ -1,10 +1,11 @@
 #ifndef __APP_H
 #define __APP_H
 
+#include <Ogre.h>
+#include <OgreTimer.h>
+#include <OgreWindowEventUtilities.h>
 #include "Game.h"
 #include "EventManager.h"
-#include "Ogre.h"
-#include "OgreWindowEventUtilities.h"
 
 class App
 {
@@ -14,7 +15,7 @@ public:
 
 	void initialize();
 	void mainLoop();
-	void DestroyWindow();
+	void destroyWindow();
 
 private:
 	Ogre::Root *ogre;
@@ -23,6 +24,7 @@ private:
 	Ogre::Camera *camera;
 	EventManager *handler;
 
+	Ogre::Timer _timer;
 	Game game;
 };
 

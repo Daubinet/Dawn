@@ -63,13 +63,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\boost_1_42;D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\include\OGRE;D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\include\OIS</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\boost_1_44;D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\include\OGRE;D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\include\OIS</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>OgreTerrain_d.lib;OgreMain_d.lib;OIS_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\lib\debug;D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\boost_1_42\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\lib\debug;D:\Inf\Projects\Dawn\Libraries\OgreSDK1.7.2\boost_1_44\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

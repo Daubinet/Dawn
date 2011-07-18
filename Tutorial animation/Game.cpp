@@ -1,71 +1,97 @@
- #include "Game.h"
+#include "Game.h"  
+//------------------------------------------------------------------------------------- 
+ITutorial01::ITutorial01(void) { } 
 
-BasicTutorial3::BasicTutorial3(void) : mTerrainGlobals(0), mTerrainGroup(0), mTerrainsImported(false), mInfoLabel(0) 
-{ 
+//------------------------------------------------------------------------------------- 
+ITutorial01::~ITutorial01(void) { }  
+
+//------------------------------------------------------------------------------------- 
+void ITutorial01::createScene(void) { 
+	// Set the default lighting. 
+	mSceneMgr->setAmbientLight(Ogre::ColourValue(1.0f, 1.0f, 1.0f)); 
+	// Create the entity 
+	mEntity = mSceneMgr->createEntity("Robot", "robot.mesh");  
+	// Create the scene node 
+	mNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("RobotNode", Ogre::Vector3(0.0f, 0.0f, 25.0f)); 
+	mNode->attachObject(mEntity); 
+	// Create the walking list 
+	mWalkList.push_back(Ogre::Vector3(550.0f, 0.0f, 50.0f )); 
+	mWalkList.push_back(Ogre::Vector3(-100.0f, 0.0f, -200.0f)); 
+	// Create objects so we can see movement
+	Ogre::Entity *ent; Ogre::SceneNode *node;  ent = mSceneMgr->createEntity("Knot1", "knot.mesh"); 
+	node = mSceneMgr->getRootSceneNode()->createChildSceneNode("Knot1Node", Ogre::Vector3(0.0f, -10.0f, 25.0f)); 
+	node->attachObject(ent); node->setScale(0.1f, 0.1f, 0.1f);  ent = mSceneMgr->createEntity("Knot2", "knot.mesh"); 
+	node = mSceneMgr->getRootSceneNode()->createChildSceneNode("Knot2Node", Ogre::Vector3(550.0f, -10.0f, 50.0f)); 
+	node->attachObject(ent); node->setScale(0.1f, 0.1f, 0.1f);  ent = mSceneMgr->createEntity("Knot3", "knot.mesh"); 
+	node = mSceneMgr->getRootSceneNode()->createChildSceneNode("Knot3Node", Ogre::Vector3(-100.0f, -10.0f,-200.0f)); 
+	node->attachObject(ent); node->setScale(0.1f, 0.1f, 0.1f);  
+	
+	// Set the camera to look at our handiwork 
+	mCamera->setPosition(90.0f, 280.0f, 535.0f); 
+	mCamera->pitch(Ogre::Degree(-30.0f)); 
+	mCamera->yaw(Ogre::Degree(-15.0f)); 
 } 
 
-BasicTutorial3::~BasicTutorial3(void)
+void ITutorial01::createFrameListener(void)
+{
+	BaseApplication::createFrameListener(); 
+	// Set idle animation 
+	mAnimationState = mEntity->getAnimationState("Idle"); 
+	mAnimationState->setLoop(true); 
+	mAnimationState->setEnabled(true); 
+	// Set default values for variables 
+	mWalkSpeed = 35.0f; 
+	mDirection = Ogre::Vector3::ZERO; 
+}  
+
+bool ITutorial01::nextLocation(void)
 { 
-}
+	if (mWalkList.empty()) 
+		return false; 
+	mDestination = mWalkList.front();
+	// this gets the front of the deque
+	mWalkList.pop_front(); 
+	// this removes the front of the deque 
+	mDirection = mDestination - mNode->getPosition();
+	mDistance = mDirection.normalise(); return true;
+} 
 
-void BasicTutorial3::destroyScene(void) 
-{
-	OGRE_DELETE mTerrainGroup;
-	OGRE_DELETE mTerrainGlobals;
-}
+bool ITutorial01::frameRenderingQueued(const Ogre::FrameEvent &evt)
+{ 
+	if (mDirection == Ogre::Vector3::ZERO) 
+	{ 
+		if (nextLocation()) {
+			// Set walking animation 
+			mAnimationState = mEntity->getAnimationState("Walk");
+			mAnimationState->setLoop(true); mAnimationState->setEnabled(true);	  
+		}//if 
+	}
+		else
+		{ 
+			Ogre::Real move = mWalkSpeed * evt.timeSinceLastFrame; mDistance -= move; 
+			if (mDistance <= 0.0f)
+			{  mNode->setPosition(mDestination); mDirection = Ogre::Vector3::ZERO;	  
+			// Set animation based on if the robot has another point to walk to.  
+			if (!nextLocation())
+			{ 
+				// Set Idle animation  
+				mAnimationState = mEntity->getAnimationState("Idle");
+				mAnimationState->setLoop(true); mAnimationState->setEnabled(true); }
+			else
+			{ 
+					// Rotation Code will go here later 
+					Ogre::Vector3 src = mNode->getOrientation() * Ogre::Vector3::UNIT_X; if ((1.0f + src.dotProduct(mDirection)) < 0.0001f) { mNode->yaw(Ogre::Degree(180));	  
+					}
+					else
+					{ Ogre::Quaternion quat = src.getRotationTo(mDirection); mNode->rotate(quat); } // else
+				}//else 
+			}else
+			{ mNode->translate(mDirection * move); 
+			} // else
+		} // if 
+		mAnimationState->addTime(evt.timeSinceLastFrame); return BaseApplication::frameRenderingQueued(evt); 
+	}  
 
-void getTerrainImage(bool flipX, bool flipY, Ogre::Image& img) 
-{
-	img.load("terrain.png", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
-	if (flipX) img.flipAroundY(); if (flipY) img.flipAroundX();  
-}
-
-void BasicTutorial3::defineTerrain(long x, long y) { Ogre::String filename = mTerrainGroup->generateFilename(x, y); if (Ogre::ResourceGroupManager::getSingleton().resourceExists(mTerrainGroup->getResourceGroup(), filename)) { mTerrainGroup->defineTerrain(x, y); } else { Ogre::Image img; getTerrainImage(x % 2 != 0, y % 2 != 0, img); mTerrainGroup->defineTerrain(x, y, &img); mTerrainsImported = true; } } 
-
-void BasicTutorial3::initBlendMaps(Ogre::Terrain* terrain) { Ogre::TerrainLayerBlendMap* blendMap0 = terrain->getLayerBlendMap(1); Ogre::TerrainLayerBlendMap* blendMap1 = terrain->getLayerBlendMap(2); Ogre::Real minHeight0 = 70; Ogre::Real fadeDist0 = 40; Ogre::Real minHeight1 = 70; Ogre::Real fadeDist1 = 15; float* pBlend1 = blendMap1->getBlendPointer(); for (Ogre::uint16 y = 0; y < terrain->getLayerBlendMapSize(); ++y) { for (Ogre::uint16 x = 0; x < terrain->getLayerBlendMapSize(); ++x) { Ogre::Real tx, ty;  blendMap0->convertImageToTerrainSpace(x, y, &tx, &ty); Ogre::Real height = terrain->getHeightAtTerrainPosition(tx, ty); Ogre::Real val = (height - minHeight0) / fadeDist0; val = Ogre::Math::Clamp(val, (Ogre::Real)0, (Ogre::Real)1);  val = (height - minHeight1) / fadeDist1; val = Ogre::Math::Clamp(val, (Ogre::Real)0, (Ogre::Real)1); *pBlend1++ = val; } } blendMap0->dirty(); blendMap1->dirty(); blendMap0->update(); blendMap1->update(); } 
-void BasicTutorial3::configureTerrainDefaults(Ogre::Light* light) { 
-	// Configure global 
-	mTerrainGlobals->setMaxPixelError(8); 
-	// testing composite map 
-	mTerrainGlobals->setCompositeMapDistance(3000);  
-	// Important to set these so that the terrain knows what to use for derived (non-realtime) data 
-	mTerrainGlobals->setLightMapDirection(light->getDerivedDirection()); 
-	mTerrainGlobals->setCompositeMapAmbient(mSceneMgr->getAmbientLight());
-	mTerrainGlobals->setCompositeMapDiffuse(light->getDiffuseColour());  
-	// Configure default import settings for if we use imported image 
-	Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings(); defaultimp.terrainSize = 513; defaultimp.worldSize = 12000.0f; defaultimp.inputScale = 600; defaultimp.minBatchSize = 33; defaultimp.maxBatchSize = 65; 
-	// textures 
-	defaultimp.layerList.resize(3); defaultimp.layerList[0].worldSize = 100; defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_diffusespecular.dds"); defaultimp.layerList[0].textureNames.push_back("dirt_grayrocky_normalheight.dds"); defaultimp.layerList[1].worldSize = 30; defaultimp.layerList[1].textureNames.push_back("grass_green-01_diffusespecular.dds"); defaultimp.layerList[1].textureNames.push_back("grass_green-01_normalheight.dds"); defaultimp.layerList[2].worldSize = 200; defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_diffusespecular.dds"); defaultimp.layerList[2].textureNames.push_back("growth_weirdfungus-03_normalheight.dds"); } 
-
-void BasicTutorial3::createScene(void) 
-{
-	mCamera->setPosition(Ogre::Vector3(1683, 50, 2116));
-	mCamera->lookAt(Ogre::Vector3(1963, 50, 1660));
-	mCamera->setNearClipDistance(0.1);
-	mCamera->setFarClipDistance(50000);
-	if (mRoot->getRenderSystem()->getCapabilities()->hasCapability(Ogre::RSC_INFINITE_FAR_PLANE)) { mCamera->setFarClipDistance(0); // enable infinite far clip distance if we can 
-}  // Play with startup Texture Filtering options 
-// Note: Pressing T on runtime will discarde those settings 
-// Ogre::MaterialManager::getSingleton().setDefaultTextureFiltering(Ogre::TFO_ANISOTROPIC); 
-// Ogre::MaterialManager::getSingleton().setDefaultAnisotropy(7);  
-Ogre::Vector3 lightdir(0.55, -0.3, 0.75); lightdir.normalise();  
-Ogre::Light* light = mSceneMgr->createLight("tstLight"); light->setType(Ogre::Light::LT_DIRECTIONAL); 
-light->setDirection(lightdir); light->setDiffuseColour(Ogre::ColourValue::White); light->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));  
-mSceneMgr->setAmbientLight(Ogre::ColourValue(0.2, 0.2, 0.2));  mTerrainGlobals = OGRE_NEW Ogre::TerrainGlobalOptions(); 
-mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(mSceneMgr, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f); 
-mTerrainGroup->setFilenameConvention(Ogre::String("BasicTutorial3Terrain"), Ogre::String("dat")); mTerrainGroup->setOrigin(Ogre::Vector3::ZERO);  
-configureTerrainDefaults(light);  for (long x = 0; x <= 0; ++x) for (long y = 0; y <= 0; ++y) defineTerrain(x, y);  
-// sync load since we want everything in place when we start 
-mTerrainGroup->loadAllTerrains(true);  if (mTerrainsImported) { Ogre::TerrainGroup::TerrainIterator ti = mTerrainGroup->getTerrainIterator(); while(ti.hasMoreElements()) { 
-	Ogre::Terrain* t = ti.getNext()->instance; initBlendMaps(t); } }  mTerrainGroup->freeTemporaryResources();  Ogre::ColourValue fadeColour(0.9, 0.9, 0.9); 
-	mSceneMgr->setFog(Ogre::FOG_LINEAR, fadeColour, 0.0, 10, 1200); mWindow->getViewport(0)->setBackgroundColour(fadeColour);  Ogre::Plane plane; plane.d = 100; 
-	plane.normal = Ogre::Vector3::NEGATIVE_UNIT_Y;  
-	//mSceneMgr->setSkyDome(true, "Examples/CloudySky", 5, 8, 500);
-	mSceneMgr->setSkyPlane(true, plane, "Examples/CloudySky", 500, 20, true, 0.5, 150, 150); } 
-
-void BasicTutorial3::createFrameListener(void) { BaseApplication::createFrameListener();  mInfoLabel = mTrayMgr->createLabel(OgreBites::TL_TOP, "TInfo", "", 350); } 
-
-bool BasicTutorial3::frameRenderingQueued(const Ogre::FrameEvent& evt) { bool ret = BaseApplication::frameRenderingQueued(evt);  if (mTerrainGroup->isDerivedDataUpdateInProgress()) { mTrayMgr->moveWidgetToTray(mInfoLabel, OgreBites::TL_TOP, 0); mInfoLabel->show(); if (mTerrainsImported) { mInfoLabel->setCaption("Building terrain, please wait..."); } else { mInfoLabel->setCaption("Updating textures, patience..."); } } else { mTrayMgr->removeWidgetFromTray(mInfoLabel); mInfoLabel->hide(); if (mTerrainsImported) { mTerrainGroup->saveAllTerrains(true); mTerrainsImported = false; } }  return ret; }    
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32 
 #define WIN32_LEAN_AND_MEAN 
 #include "windows.h" 
@@ -73,26 +99,23 @@ bool BasicTutorial3::frameRenderingQueued(const Ogre::FrameEvent& evt) { bool re
 #ifdef __cplusplus 
 extern "C" { 
 #endif  
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-	INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT ) 
-#else 
-	int main(int argc, char *argv[]) 
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32 
+			INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT ) 
+#else int main(int argc, char *argv[]) 
 #endif 
-	{
-
-	BasicTutorial3 app;  
+{
+	// Create application object 
+	ITutorial01 app;  
 	try { app.go(); } 
-	catch( Ogre::Exception& e ) { 
-
-#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
-		MessageBox( NULL, (LPCWSTR)(e.getFullDescription().c_str()), L"An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
+	catch( Ogre::Exception& e ) 
+	{ 
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32 
+		MessageBox( NULL, (LPCWSTR)e.getFullDescription().c_str(), L"An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL); 
 #else 
 		std::cerr << "An exception has occured: " << e.getFullDescription().c_str() << std::endl; 
 #endif 
-	}
-	return 0; 
-}  
-
+	}  
+	return 0; }  
 #ifdef __cplusplus 
 } 
 #endif

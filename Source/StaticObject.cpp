@@ -13,12 +13,9 @@ StaticObject::StaticObject(std::string name, Ogre::Entity* obj, Ogre::SceneNode*
 	_object = obj;
 	_objname = name;
 	_objnode = node;
-	_objnode->setPosition( 1.0, 1.0, 1.0);
-	
 } 
 StaticObject::StaticObject(std::string name, Ogre::Entity* obj, Ogre::SceneNode* node, Ogre::Vector3 position)
 {
-
 	_object = obj;
 	_objname = name;
 	_objnode = node;

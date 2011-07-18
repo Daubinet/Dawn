@@ -1,8 +1,8 @@
+#include <Ogre.h>
+#include <OgreWindowEventUtilities.h>
 #include "EventManager.h"
 #include "App.h"
 #include "Globals.h"
-#include <Ogre.h>
-#include <OgreWindowEventUtilities.h>
 
 App::App()
 {
@@ -67,7 +67,6 @@ void App::initialize()
 	// we'll see how to change this
 	sceneMgr = ogre->createSceneManager(Ogre::ST_GENERIC);
 	camera = sceneMgr->createCamera("camera");
-	camera->setNearClipDistance(5);
     Ogre::Viewport* vp = window->addViewport(camera);
     vp->setBackgroundColour(Ogre::ColourValue(0,0,0));
 
@@ -83,7 +82,7 @@ void App::initialize()
 
 	game.initialize(sceneMgr, camera, handler);
 }
-void App::DestroyWindow()
+void App::destroyWindow()
 {
 	if(sceneMgr != NULL){
 		sceneMgr->destroyAllCameras();
@@ -103,17 +102,19 @@ void App::DestroyWindow()
 }
 void App::mainLoop()
 {
+	_timer.reset();
 	gQuit = false;
 	while(!gQuit) {
-				
+		// get events		
 		handler->capture();
 
-		game.update();
+		// update
+		game.update(_timer.getMilliseconds());
+		_timer.reset();
+
+		//draw
 		game.draw();
-
 		ogre->renderOneFrame();
-
-		Ogre::WindowEventUtilities::messagePump();
 	}
 }
 
@@ -132,6 +133,6 @@ int main (int argc, char *argv[])
 	App app;
 	app.initialize();
 	app.mainLoop();
-	app.DestroyWindow();
+	app.destroyWindow();
 	return 0;
 }

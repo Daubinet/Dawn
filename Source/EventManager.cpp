@@ -2,15 +2,16 @@
 #include "OgreStringConverter.h"
 
 EventManager::EventManager(unsigned long hWnd)
+: _mouse(NULL)
 {	
 	OIS::ParamList pl;
 	pl.insert(OIS::ParamList::value_type("WINDOW", Ogre::StringConverter::toString(hWnd)));
 	
 	_hWnd = hWnd;
 	_ois = OIS::InputManager::createInputSystem( pl );
-	_mouse = static_cast<OIS::Mouse*>(_ois->createInputObject( OIS::OISMouse, true ));
+	//_mouse = static_cast<OIS::Mouse*>(_ois->createInputObject( OIS::OISMouse, true ));
 	_keyboard = static_cast<OIS::Keyboard*>(_ois->createInputObject( OIS::OISKeyboard, true));
-	_mouse->setEventCallback(this);
+	//_mouse->setEventCallback(this);
 	_keyboard->setEventCallback(this);
 
 	for(int i = 0; i < 256; ++i) {
@@ -37,7 +38,7 @@ EventManager::~EventManager()
 
 void EventManager::capture()
 {
-	_mouse->capture();
+	//_mouse->capture();
 	_keyboard->capture();
 
 	for(int i = 0; i < 256; ++i) {
@@ -63,9 +64,9 @@ bool EventManager::pressedKey(OIS::KeyCode keyCode)
 
 void EventManager::setWindowExtents(int width, int height)
 {
-	const OIS::MouseState &ms = _mouse->getMouseState();
-	ms.width = width;
-	ms.height = height;
+	//const OIS::MouseState &ms = _mouse->getMouseState();
+	//ms.width = width;
+	//ms.height = height;
 }
 
 // MouseListener
