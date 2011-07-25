@@ -85,7 +85,8 @@ bool ITutorial01::frameRenderingQueued(const Ogre::FrameEvent &evt)
 					else
 					{ Ogre::Quaternion quat = src.getRotationTo(mDirection); mNode->rotate(quat); } // else
 				}//else 
-			}else
+			}
+			else
 			{ mNode->translate(mDirection * move); 
 			} // else
 		} // if 

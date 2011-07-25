@@ -97,6 +97,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedObject.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -104,6 +105,7 @@
     <ClCompile Include="StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedObject.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />

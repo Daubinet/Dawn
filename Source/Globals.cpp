@@ -1,3 +1,4 @@
 #include "Globals.h"
 
- bool gQuit;
+Ogre::SceneManager *gSceneManager;
+bool gQuit;

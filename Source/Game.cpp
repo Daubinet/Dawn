@@ -17,34 +17,39 @@ void getTerrainImage(bool flipX, bool flipY, Ogre::Image& img)
 	if (flipX) img.flipAroundY(); if (flipY) img.flipAroundX();  
 }
 
-void Game::initialize(Ogre::SceneManager *sceneManager, Ogre::Camera *camera, EventManager *handler)
+void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 {
 	_handler = handler;
-	_sceneManager = sceneManager;
 	_camera = camera;
 	
-	_sceneManager->setAmbientLight(Ogre::ColourValue(0.5, 0.5, 0.5));
-	_sceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
+	gSceneManager->setAmbientLight(Ogre::ColourValue(0.5, 0.5, 0.5));
+	gSceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
 	
-	// Loading and adding demo model to screen
-	Ogre::SceneNode* _ninjanode = _sceneManager->getRootSceneNode()->createChildSceneNode("Ninja");
+	robot.create("RobotNode");
+	robot.setMesh("Robot", "robot.mesh");
+	robot.setPosition(Ogre::Vector3(1693, 50, 2110));
+	robot.animate("Walk");
+
+	// Load ing and adding demo model to screen
+	Ogre::SceneNode* _ninjanode = gSceneManager->getRootSceneNode()->createChildSceneNode("Ninja");
 	_ninjanode->setPosition(Ogre::Vector3(1683, 50, 2110));
 		
-	_ninja = new StaticObject("Ninja", _sceneManager->createEntity("Ninja","WereVixen.mesh"), _ninjanode);
+	_ninja = new StaticObject("Ninja", gSceneManager->createEntity("Ninja","WereVixen.mesh"), _ninjanode);
 	_ninjanode->attachObject(_ninja->getEntity());
 	_ninjanode->scale(10, 10, 10);
-
+	_ninjanode->rotate(Ogre::Vector3(0, 1, 0), Ogre::Radian(3.14));
+	_ninjanode->rotate(Ogre::Vector3(1, 0, 0), Ogre::Radian(1.57));
 
 	Ogre::Vector3 lightdir(0.55, -0.3, 0.75); lightdir.normalise();  
-	Ogre::Light* light = _sceneManager->createLight("tstLight"); 
+	Ogre::Light* light = gSceneManager->createLight("tstLight"); 
 	light->setType(Ogre::Light::LT_DIRECTIONAL); 
 	light->setDirection(lightdir); 
 	light->setDiffuseColour(Ogre::ColourValue::White); 
-	light->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));  
-	_sceneManager->setAmbientLight(Ogre::ColourValue(0.2, 0.2, 0.2));
+	light->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));
+	gSceneManager->setAmbientLight(Ogre::ColourValue(0.2, 0.2, 0.2));
 
 	mTerrainGlobals = OGRE_NEW Ogre::TerrainGlobalOptions(); 
-	mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(_sceneManager, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f); 
+	mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(gSceneManager, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f); 
 	mTerrainGroup->setFilenameConvention(Ogre::String("BasicTutorial3Terrain"), Ogre::String("dat"));
 	mTerrainGroup->setOrigin(Ogre::Vector3::ZERO);  
 	configureTerrainDefaults(light); 
@@ -68,7 +73,7 @@ void Game::initialize(Ogre::SceneManager *sceneManager, Ogre::Camera *camera, Ev
 	Ogre::Plane skybox;
 	skybox.d = 100; 
 	skybox.normal = Ogre::Vector3::NEGATIVE_UNIT_Y;  
-	_sceneManager->setSkyPlane(true, skybox, "Examples/CloudySky", 500, 20, true, 0.5, 150, 150); 
+	gSceneManager->setSkyPlane(true, skybox, "Examples/CloudySky", 500, 20, true, 0.5, 150, 150); 
 
 	// set camera
 	_camera->setPosition(_ninja->position()+Ogre::Vector3(0, 10, 100)); 
@@ -131,7 +136,7 @@ void Game::configureTerrainDefaults(Ogre::Light* light)
 	mTerrainGlobals->setCompositeMapDistance(3000);  
 	// Important to set these so that the terrain knows what to use for derived (non-realtime) data 
 	mTerrainGlobals->setLightMapDirection(light->getDerivedDirection()); 
-	mTerrainGlobals->setCompositeMapAmbient(_sceneManager->getAmbientLight());
+	mTerrainGlobals->setCompositeMapAmbient(gSceneManager->getAmbientLight());
 	mTerrainGlobals->setCompositeMapDiffuse(light->getDiffuseColour());  
 	// Configure default import settings for if we use imported image 
 	Ogre::Terrain::ImportData& defaultimp = mTerrainGroup->getDefaultImportSettings(); 
@@ -177,10 +182,6 @@ void Game::update(unsigned long milliseconds)
 	_camera->setPosition(_ninja->position()+Ogre::Vector3(0, 10, 100)); 
 	_camera->lookAt(_ninja->position());
 
-}
-
-void Game::draw()
-{
-	_ninja->position();
+	robot.update(seconds);
 }
 

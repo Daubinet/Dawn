@@ -7,6 +7,7 @@
 #include <Terrain/OgreTerrainGroup.h>
 #include "EventManager.h"
 #include "StaticObject.h"
+#include "AnimatedObject.h"
 
 class Game
 {
@@ -14,15 +15,14 @@ public:
     Game(void);
     virtual ~Game(void);
 
-	void initialize(Ogre::SceneManager *sceneManager, Ogre::Camera *camera, EventManager *handler);
+	void initialize(Ogre::Camera *camera, EventManager *handler);
 	void update(unsigned long milliseconds);
-	void draw();
 
 private:
-	Ogre::SceneManager *_sceneManager;
 	Ogre::Camera *_camera;
 	EventManager *_handler;
 	StaticObject* _ninja;
+	AnimatedObject robot;
 
 	Ogre::TerrainGlobalOptions *mTerrainGlobals;
 	Ogre::TerrainGroup *mTerrainGroup;
@@ -30,7 +30,6 @@ private:
 	void defineTerrain(long x, long y);
 	void initBlendMaps(Ogre::Terrain* terrain);
 	void configureTerrainDefaults(Ogre::Light* light); 
-
 };
 
 #endif // __GAME_H

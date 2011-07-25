@@ -20,7 +20,6 @@ public:
 private:
 	Ogre::Root *ogre;
 	Ogre::RenderWindow *window;
-	Ogre::SceneManager *sceneMgr;
 	Ogre::Camera *camera;
 	EventManager *handler;
 
