@@ -1,41 +1,26 @@
 #include "StaticObject.h"
-/*
-StaticObject::StaticObject(std::string name, std::string filename)
-{
-	_object = NULL;  /*
-						TODO FILL THIS FUNCTION
-					 
-	
-} */
-StaticObject::StaticObject(std::string name, Ogre::Entity* obj, Ogre::SceneNode* node)
-{
+#include "Globals.h"
 
-	_object = obj;
-	_objname = name;
-	_objnode = node;
-} 
-StaticObject::StaticObject(std::string name, Ogre::Entity* obj, Ogre::SceneNode* node, Ogre::Vector3 position)
+StaticObject::StaticObject()
+: _node(NULL), _mesh(NULL)
 {
-	_object = obj;
-	_objname = name;
-	_objnode = node;
-	_objnode->setPosition( position);
-	
-} 
-Ogre::Entity* StaticObject::getEntity()
-{
-	
-	return (_object != NULL) ? _object : NULL;  //if object is not null the return object else return a NULL
-}
-Ogre::SceneNode* StaticObject::getSceneNode()
-{
-	return (_objnode != NULL) ? _objnode : NULL;
-}
-void StaticObject::setPosition(float x, float y, float z)
-{		
-	_objnode->setPosition((Ogre::Real)x,(Ogre::Real) y,(Ogre::Real) z);
 }
 
 StaticObject::~StaticObject()
 {
+}
+
+void StaticObject::create(std::string name)
+{
+	if(_node)
+		delete _node;
+	_node = gSceneManager->getRootSceneNode()->createChildSceneNode(name);
+}
+
+void StaticObject::setMesh(std::string name, std::string file)
+{
+	if(_mesh)
+		delete _mesh;
+	_mesh = gSceneManager->createEntity(name, file);
+	_node->attachObject(_mesh);
 }

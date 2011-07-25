@@ -21,8 +21,10 @@ public:
 private:
 	Ogre::Camera *_camera;
 	EventManager *_handler;
-	StaticObject* _ninja;
+
 	AnimatedObject robot;
+	AnimatedObject werewolf;
+	StaticObject streetLamp, sellingHouse;
 
 	Ogre::TerrainGlobalOptions *mTerrainGlobals;
 	Ogre::TerrainGroup *mTerrainGroup;

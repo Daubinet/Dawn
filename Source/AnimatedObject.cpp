@@ -12,8 +12,10 @@ AnimatedObject::~AnimatedObject()
 	
 void AnimatedObject::update(double seconds)
 {
-	if(_anim)
-		_anim->addTime(seconds);
+	if(_anim == NULL)
+		return;
+
+	_anim->addTime(seconds);
 }
 
 void AnimatedObject::create(std::string name)
@@ -29,11 +31,6 @@ void AnimatedObject::setMesh(std::string name, std::string file)
 		delete _mesh;
 	_mesh = gSceneManager->createEntity(name, file);
 	_node->attachObject(_mesh);
-}
-
-void AnimatedObject::setPosition(Ogre::Vector3 v)
-{
-	_node->setPosition(v);
 }
 
 void AnimatedObject::animate(std::string animName)
