@@ -3,8 +3,8 @@
 
 #include <Ogre.h>
 #include <OgreWindowEventUtilities.h>
-#include <Terrain/OgreTerrain.h>
-#include <Terrain/OgreTerrainGroup.h>
+#include <OgreTerrain.h>
+#include <OgreTerrainGroup.h>
 #include "EventManager.h"
 #include "StaticObject.h"
 #include "AnimatedObject.h"

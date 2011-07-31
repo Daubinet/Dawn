@@ -11,7 +11,7 @@ App::App()
 App::~App()
 {
 	delete handler;
-	delete ogre;
+	
 }
 
 void App::initialize()
@@ -28,18 +28,21 @@ void App::initialize()
 	ogre->loadPlugin("Plugin_PCZSceneManager_d");		
 	ogre->loadPlugin("Plugin_OctreeZone_d");		
 	ogre->loadPlugin("Plugin_OctreeSceneManager_d");			
-
 #else
+	ogre->loadPlugin("RenderSystem_Direct3D9");		
+	ogre->loadPlugin("RenderSystem_GL");		
+	ogre->loadPlugin("Plugin_ParticleFX");		
+	ogre->loadPlugin("Plugin_BSPSceneManager");		
 	ogre->loadPlugin("Plugin_CgProgramManager");		
-	ogre->loadPlugin("Plugin_OctreeSceneManager");
+	ogre->loadPlugin("Plugin_PCZSceneManager");		
+	ogre->loadPlugin("Plugin_OctreeZone");		
+	ogre->loadPlugin("Plugin_OctreeSceneManager");	
 #endif
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/fonts", "FileSystem", "Popular");
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/materials/programs", "FileSystem", "Popular");
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/materials/scripts", "FileSystem", "Popular");
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/materials/textures", "FileSystem", "Popular");
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/materials/textures/nvidia", "FileSystem", "Popular");
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/models", "FileSystem", "Popular");
-	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../Data/particle", "FileSystem", "Popular");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("Data/materials/programs", "FileSystem", "Popular");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("Data/materials/scripts", "FileSystem", "Popular");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("Data/materials/textures", "FileSystem", "Popular");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("Data/materials/textures/nvidia", "FileSystem", "Popular");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("Data/models", "FileSystem", "Popular");
 	
 	Ogre::RenderSystemList renderSystems;
 	Ogre::RenderSystemList::iterator r_it;
@@ -89,8 +92,7 @@ void App::destroyWindow()
 	if(window != NULL)
 		window->destroy();
 	if(ogre != NULL)
-		ogre->destroyAllRenderQueueInvocationSequences();
-	
+		ogre->destroyAllRenderQueueInvocationSequences();	
 }
 void App::mainLoop()
 {

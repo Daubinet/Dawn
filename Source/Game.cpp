@@ -41,8 +41,8 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 
 	for (long x = 0; x <= 0; ++x) 
 		for (long y = 0; y <= 0; ++y) 
-			defineTerrain(x, y); 
-
+			defineTerrain(x, y);
+	
 	// sync load since we want everything in place when we start 
 	mTerrainGroup->loadAllTerrains(true);
 	if (mTerrainsImported) { 
@@ -52,7 +52,7 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 			initBlendMaps(t);
 		}
 	}
-	mTerrainGroup->freeTemporaryResources(); 
+	mTerrainGroup->freeTemporaryResources();
 
 	//robot.create("RobotNode");
 	//robot.setMesh("Robot", "robot.mesh");
@@ -64,7 +64,7 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	werewolf.setPosition(Ogre::Vector3(1693, 20, 2110));
 	werewolf.setScale(Ogre::Vector3(5, 5, 5));
 	werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
-	//werewolf.animate("Walk");
+	//werewolf.animate("walk");
 
 	streetLamp.create("StreetLamp");
 	streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
@@ -74,10 +74,9 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 
 	sellingHouse.create("SellingHouse");
 	sellingHouse.setMesh("SellingHouse", "SellingHouse.mesh");
-	sellingHouse.setPosition(Ogre::Vector3(1803, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1903, 0, 1870)), 1570));
+	sellingHouse.setPosition(Ogre::Vector3(1803,mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1903, 0, 1870)), 1570));
 	sellingHouse.setScale(Ogre::Vector3(2.0, 2.0, 2.0));
 
-	// skybox
 	Ogre::Plane skybox;
 	skybox.d = 100; 
 	skybox.normal = Ogre::Vector3::NEGATIVE_UNIT_Y;  
@@ -173,7 +172,6 @@ void Game::update(unsigned long milliseconds)
 	Ogre::Real Z = werewolf.position().z;
 	Ogre::Real Y = werewolf.position().y;
 
-
 	if(_handler->pressedKey(OIS::KC_ESCAPE))
 		gQuit = true;
 
@@ -191,7 +189,6 @@ void Game::update(unsigned long milliseconds)
 
 	_camera->setPosition(werewolf.position()+Ogre::Vector3(0, 10, 100)); 
 	_camera->lookAt(werewolf.position());
-
 	//robot.update(seconds);
 }
 

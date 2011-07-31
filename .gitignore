@@ -1,10 +1,9 @@
-Bin/
 Obj/
 Libraries/
 Media/
-OldMedia/
-Data/
 *ipch*
 *.sdf*
 *.suo*
+*.exe*
+*.dll*
 *Debug*
