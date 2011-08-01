@@ -46,6 +46,11 @@ private:
 	bool _key[256];
     bool _keyIm[256];
 	bool _keyLast[256];
+
+	// Mouse
+	bool _button[3];
+    bool _buttonIm[3];
+	bool _buttonLast[3];
 };
 
 #endif // __EVENTMANAGER_H

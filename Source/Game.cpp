@@ -64,7 +64,6 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	werewolf.setPosition(Ogre::Vector3(1693, 20, 2110));
 	werewolf.setScale(Ogre::Vector3(5, 5, 5));
 	werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
-	//werewolf.animate("walk");
 
 	streetLamp.create("StreetLamp");
 	streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
@@ -168,27 +167,19 @@ void Game::update(unsigned long milliseconds)
 {
 	double seconds = milliseconds/1000.0;
 
-	Ogre::Real X = werewolf.position().x;
-	Ogre::Real Z = werewolf.position().z;
-	Ogre::Real Y = werewolf.position().y;
-
 	if(_handler->pressedKey(OIS::KC_ESCAPE))
 		gQuit = true;
 
 	if(_handler->isPressingKey(OIS::KC_UP))
-		Z -= 15*seconds;
-	if(_handler->isPressingKey(OIS::KC_DOWN))
-		Z += 15*seconds;
-	if(_handler->isPressingKey(OIS::KC_LEFT))
-		X -= 15*seconds;
-	if(_handler->isPressingKey(OIS::KC_RIGHT))
-		X += 15*seconds;
+		werewolf.walk();
 
-	Y = mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(X, Y, Z));
-	werewolf.setPosition(Ogre::Vector3(X, Y+10, Z));
+	werewolf.update(seconds*5);
 
-	_camera->setPosition(werewolf.position()+Ogre::Vector3(0, 10, 100)); 
-	_camera->lookAt(werewolf.position());
-	//robot.update(seconds);
+	Ogre::Real Y = mTerrainGroup->getHeightAtWorldPosition(werewolf.position());
+	werewolf.setY(Y);
+	
+	_camera->setPosition(Ogre::Vector3(werewolf.position().x, Y+30, werewolf.position().z+50)); 
+	_camera->lookAt(werewolf.position()+Ogre::Vector3(0, 20, 0));
+	
 }
 

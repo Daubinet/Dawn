@@ -68,5 +68,8 @@
     <ClInclude Include="AnimatedObject.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

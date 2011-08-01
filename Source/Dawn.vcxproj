@@ -110,6 +110,7 @@
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="Hero.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Terrain.h" />
   </ItemGroup>

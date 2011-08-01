@@ -9,9 +9,9 @@ EventManager::EventManager(unsigned long hWnd)
 	
 	_hWnd = hWnd;
 	_ois = OIS::InputManager::createInputSystem( pl );
-	//_mouse = static_cast<OIS::Mouse*>(_ois->createInputObject( OIS::OISMouse, true ));
+	_mouse = static_cast<OIS::Mouse*>(_ois->createInputObject( OIS::OISMouse, true ));
 	_keyboard = static_cast<OIS::Keyboard*>(_ois->createInputObject( OIS::OISKeyboard, true));
-	//_mouse->setEventCallback(this);
+	_mouse->setEventCallback(this);
 	_keyboard->setEventCallback(this);
 
 	for(int i = 0; i < 256; ++i) {
@@ -20,9 +20,9 @@ EventManager::EventManager(unsigned long hWnd)
 		_keyLast[i] = false;
 	}
 	for(int i = 0; i < 3; ++i) {
-		//_buttonIm[i] = false;
-		//_button[i] = false;
-		//_buttonLast[i] = false;
+		_buttonIm[i] = false;
+		_button[i] = false;
+		_buttonLast[i] = false;
 	}
 }
 
@@ -38,7 +38,7 @@ EventManager::~EventManager()
 
 void EventManager::capture()
 {
-	//_mouse->capture();
+	_mouse->capture();
 	_keyboard->capture();
 
 	for(int i = 0; i < 256; ++i) {
@@ -46,8 +46,8 @@ void EventManager::capture()
 		_key[i] = _keyIm[i];
 	}
 	for(int i = 0; i < 3; ++i) {
-		//_buttonLast[i] = _button[i];
-		//_button[i] = _buttonIm[i];
+		_buttonLast[i] = _button[i];
+		_button[i] = _buttonIm[i];
 	}
 }
 
@@ -64,9 +64,9 @@ bool EventManager::pressedKey(OIS::KeyCode keyCode)
 
 void EventManager::setWindowExtents(int width, int height)
 {
-	//const OIS::MouseState &ms = _mouse->getMouseState();
-	//ms.width = width;
-	//ms.height = height;
+	const OIS::MouseState &ms = _mouse->getMouseState();
+	ms.width = width;
+	ms.height = height;
 }
 
 // MouseListener
