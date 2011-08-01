@@ -17,7 +17,7 @@ public:
 	void animate(std::string animName);
 	
 	// Sets
-	void setPosition(Ogre::Vector3 v) { _node->setPosition(v); }
+	void setPosition(Ogre::Vector3 v){ _node->setPosition(v); };
 	void setRotation(Ogre::Radian x, Ogre::Radian y, Ogre::Radian z) { 
 		_node->rotate(Ogre::Vector3(1, 0, 0), x); 
 		_node->rotate(Ogre::Vector3(0, 1, 0), y);
@@ -27,7 +27,7 @@ public:
 
 	// Gets
 	Ogre::Vector3 position() { return _node->getPosition(); }
-
+	Ogre::Quaternion rotation() {return _node->getOrientation();};
 private:
 	Ogre::Entity *_mesh;
 	Ogre::SceneNode *_node;	

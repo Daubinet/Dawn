@@ -61,21 +61,28 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 
 	werewolf.create("Werewolf");
 	werewolf.setMesh("Werewolf", "WereVixen.mesh");
-	werewolf.setPosition(Ogre::Vector3(1693, 20, 2110));
+	werewolf.setPosition(Ogre::Vector3(1693, 20, 2090));
 	werewolf.setScale(Ogre::Vector3(5, 5, 5));
 	werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
-	//werewolf.animate("Walk");
+	
 
-	streetLamp.create("StreetLamp");
-	streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
-	streetLamp.setPosition(Ogre::Vector3(1703, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1703, 0, 1110)), 1110));
-	streetLamp.setScale(Ogre::Vector3(2.5, 2.5, 2.5));
-	streetLamp.setRotation(Ogre::Radian(0), Ogre::Radian(1.57), Ogre::Radian(0));
 
-	sellingHouse.create("SellingHouse");
-	sellingHouse.setMesh("SellingHouse", "SellingHouse.mesh");
-	sellingHouse.setPosition(Ogre::Vector3(1803, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1903, 0, 1870)), 1570));
-	sellingHouse.setScale(Ogre::Vector3(2.0, 2.0, 2.0));
+	monster.create("Mobbie");
+	monster.setMesh("Mobbie", "WereVixen.mesh");
+	monster.setPosition(Ogre::Vector3(1708, 20, 2105));
+	monster.setScale(Ogre::Vector3(5, 5, 5));
+	monster.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
+	
+	//streetLamp.create("StreetLamp");
+	//streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
+	//streetLamp.setPosition(Ogre::Vector3(1703, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1703, 0, 1110)), 1110));
+	//streetLamp.setScale(Ogre::Vector3(2.5, 2.5, 2.5));
+	//streetLamp.setRotation(Ogre::Radian(0), Ogre::Radian(1.57), Ogre::Radian(0));
+
+	//sellingHouse.create("SellingHouse");
+	//sellingHouse.setMesh("SellingHouse", "SellingHouse.mesh");
+	//sellingHouse.setPosition(Ogre::Vector3(1803, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1903, 0, 1870)), 1570));
+	//sellingHouse.setScale(Ogre::Vector3(2.0, 2.0, 2.0));
 
 	// skybox
 	Ogre::Plane skybox;
@@ -185,9 +192,18 @@ void Game::update(unsigned long milliseconds)
 		X -= 15*seconds;
 	if(_handler->isPressingKey(OIS::KC_RIGHT))
 		X += 15*seconds;
+	
+	//For testing the mob
+	if(_handler->isPressingKey(OIS::KC_D))
+		monster.setHealth(-100);
+
+	if(monster.getHealth() <= 0)
+		monster.onDeath();
+	
+		monster.MoveToTarget(werewolf);
 
 	Y = mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(X, Y, Z));
-	werewolf.setPosition(Ogre::Vector3(X, Y+10, Z));
+	werewolf.moveTo(Ogre::Vector3(X, Y+10, Z));
 
 	_camera->setPosition(werewolf.position()+Ogre::Vector3(0, 10, 100)); 
 	_camera->lookAt(werewolf.position());

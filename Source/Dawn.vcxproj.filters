@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Scene">
       <UniqueIdentifier>{6c38399d-2604-4138-9ab7-b8fba899affe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Creatures">
+      <UniqueIdentifier>{907c3196-2192-4911-839a-41fc107adf46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Creatures">
+      <UniqueIdentifier>{ee2bfd82-1b49-43c9-8de8-aa5e0e3a99f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp">
@@ -44,6 +50,18 @@
     </ClCompile>
     <ClCompile Include="AnimatedObject.cpp">
       <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Mob.cpp">
+      <Filter>Source Files\Creatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature.cpp">
+      <Filter>Source Files\Creatures</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Creatures</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicAI.cpp">
+      <Filter>Source Files\Creatures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +85,18 @@
     </ClInclude>
     <ClInclude Include="AnimatedObject.h">
       <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Mob.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Creatures</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicAI.h">
+      <Filter>Header Files\Creatures</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

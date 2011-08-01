@@ -98,18 +98,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedObject.cpp" />
+    <ClCompile Include="BasicAI.cpp" />
+    <ClCompile Include="Creature.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="Mob.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedObject.h" />
     <ClInclude Include="App.h" />
+    <ClInclude Include="BasicAI.h" />
+    <ClInclude Include="Creature.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="Mob.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Terrain.h" />
   </ItemGroup>
