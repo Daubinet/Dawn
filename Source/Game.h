@@ -7,7 +7,8 @@
 #include <OgreTerrainGroup.h>
 #include "EventManager.h"
 #include "StaticObject.h"
-#include "AnimatedObject.h"
+#include "Player.h"
+#include "Mob.h"
 
 class Game
 {
@@ -22,9 +23,9 @@ private:
 	Ogre::Camera *_camera;
 	EventManager *_handler;
 
-	AnimatedObject robot;
-	AnimatedObject werewolf;
-	StaticObject streetLamp, sellingHouse;
+	Player _werewolf;
+	Mob _monster;
+	StaticObject _streetLamp, _sellingHouse;
 
 	Ogre::TerrainGlobalOptions *mTerrainGlobals;
 	Ogre::TerrainGroup *mTerrainGroup;

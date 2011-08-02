@@ -7836,7 +7836,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DawnOfTheWolf"
         "ProductCode" = "8:{CEA13EEB-4ADE-4CAD-A880-FE4E7FBE038D}"
-        "PackageCode" = "8:{D927D680-32D7-41BE-ABFC-046CE7E76B59}"
+        "PackageCode" = "8:{DA88D057-947A-40D1-A4D9-A6F87DFDF6FC}"
         "UpgradeCode" = "8:{2D76D6CD-2CAD-48FE-AD51-84F2638729C0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -54,27 +54,28 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	}
 	mTerrainGroup->freeTemporaryResources();
 
-	//robot.create("RobotNode");
-	//robot.setMesh("Robot", "robot.mesh");
-	//robot.setPosition(Ogre::Vector3(1693, 50, 2110));
-	//robot.animate("Walk");
+	_werewolf.create("Werewolf");
+	_werewolf.setMesh("Werewolf", "WereVixen.mesh");
+	_werewolf.setPosition(Ogre::Vector3(1693, 20, 2090));
+	_werewolf.setScale(Ogre::Vector3(5, 5, 5));
+	_werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
 
-	werewolf.create("Werewolf");
-	werewolf.setMesh("Werewolf", "WereVixen.mesh");
-	werewolf.setPosition(Ogre::Vector3(1693, 20, 2110));
-	werewolf.setScale(Ogre::Vector3(5, 5, 5));
-	werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
+	_monster.create("Mobbie");
+	_monster.setMesh("Mobbie", "WereVixen.mesh");
+	_monster.setPosition(Ogre::Vector3(1708, 20, 2005));
+	_monster.setScale(Ogre::Vector3(5, 5, 5));
+	_monster.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
+	
+	_streetLamp.create("StreetLamp");
+	_streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
+	_streetLamp.setPosition(Ogre::Vector3(1703, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1703, 0, 1110)), 1110));
+	_streetLamp.setScale(Ogre::Vector3(2.5, 2.5, 2.5));
+	_streetLamp.setRotation(Ogre::Radian(0), Ogre::Radian(1.57), Ogre::Radian(0));
 
-	streetLamp.create("StreetLamp");
-	streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
-	streetLamp.setPosition(Ogre::Vector3(1703, mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1703, 0, 1110)), 1110));
-	streetLamp.setScale(Ogre::Vector3(2.5, 2.5, 2.5));
-	streetLamp.setRotation(Ogre::Radian(0), Ogre::Radian(1.57), Ogre::Radian(0));
-
-	sellingHouse.create("SellingHouse");
-	sellingHouse.setMesh("SellingHouse", "SellingHouse.mesh");
-	sellingHouse.setPosition(Ogre::Vector3(1803,mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1903, 0, 1870)), 1570));
-	sellingHouse.setScale(Ogre::Vector3(2.0, 2.0, 2.0));
+	_sellingHouse.create("SellingHouse");
+	_sellingHouse.setMesh("SellingHouse", "SellingHouse.mesh");
+	_sellingHouse.setPosition(Ogre::Vector3(1803,mTerrainGroup->getHeightAtWorldPosition(Ogre::Vector3(1903, 0, 1870)), 1570));
+	_sellingHouse.setScale(Ogre::Vector3(2.0, 2.0, 2.0));
 
 	Ogre::Plane skybox;
 	skybox.d = 100; 
@@ -82,8 +83,8 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	gSceneManager->setSkyPlane(true, skybox, "Examples/CloudySky", 500, 20, true, 0.5, 150, 150); 
 
 	// set camera
-	_camera->setPosition(werewolf.position()+Ogre::Vector3(0, 10, 100)); 
-	_camera->lookAt(werewolf.position());
+	_camera->setPosition(_werewolf.position()+Ogre::Vector3(0, 10, 100)); 
+	_camera->lookAt(_werewolf.position());
 	_camera->setNearClipDistance(5);  
 	_camera->setFarClipDistance(0);
 }
@@ -171,15 +172,30 @@ void Game::update(unsigned long milliseconds)
 		gQuit = true;
 
 	if(_handler->isPressingKey(OIS::KC_UP))
-		werewolf.walk();
+		_werewolf.walk();
 
-	werewolf.update(seconds*5);
+	if(_handler->isPressingKey(OIS::KC_D))
+		_monster.setHealth(-100);
 
-	Ogre::Real Y = mTerrainGroup->getHeightAtWorldPosition(werewolf.position());
-	werewolf.setY(Y);
+	if(_monster.health() <= 0)
+		_monster.die();
+
+	// calculate monster movement
+	_monster.updateAI(seconds);
+		
+	// update
+	_werewolf.update(seconds);
+	_monster.update(seconds);
+
+	// fix heights
+	Ogre::Real Y = mTerrainGroup->getHeightAtWorldPosition(_werewolf.position());
+	_werewolf.setY(Y);
+	Y = mTerrainGroup->getHeightAtWorldPosition(_monster.position());
+	_monster.setY(Y);
 	
-	_camera->setPosition(Ogre::Vector3(werewolf.position().x, Y+30, werewolf.position().z+50)); 
-	_camera->lookAt(werewolf.position()+Ogre::Vector3(0, 20, 0));
+	// set camera
+	_camera->setPosition(_werewolf.position()+Ogre::Vector3(0, 30, 50)); 
+	_camera->lookAt(_werewolf.position()+Ogre::Vector3(0, 20, 0));
 	
 }
 

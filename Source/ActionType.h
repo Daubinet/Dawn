@@ -1,0 +1,10 @@
+#ifndef __ACTIONTYPE_H
+#define __ACTIONTYPE_H
+
+class Action 
+{ 
+public:
+	enum Type { ACT_IDLE, ACT_WALK, ACT_ROTATELEFT, ACT_ROTATERIGHT, ACT_RUN, ACT_DIE, ACT_BATTLE, ACT_FALL, ACT_PICKUPONE };
+};
+
+#endif // __ACTIONTYPE_H

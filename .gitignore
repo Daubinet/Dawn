@@ -6,4 +6,6 @@ Media/
 *.suo*
 *.exe*
 *.dll*
+*.pdb*
+*.log*
 *Debug*
