@@ -1,9 +1,9 @@
 #ifndef __MOBSTATS_H
 #define __MOBSTATS_H
 
-class MobStats
+struct MobStats
 {
-
+	int health;
 };
 
 #endif // __MOBSTATS_H

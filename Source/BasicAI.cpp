@@ -7,5 +7,17 @@ void BasicAI::setBehavior(BasicAI::Behavior behavior)
 
 Action::Type BasicAI::getNextAction()
 {
-	return Action::ACT_WALK;
+	if(_stats->health < 0)
+		return Action::ACT_DIE;
+	
+	switch(_behavior)
+	{
+	case AI_PATROLL:
+		return Action::ACT_WALK;
+		break;
+	// should never happen
+	default:
+		return Action::ACT_WALK;
+		break;
+	}
 }

@@ -61,10 +61,10 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	_werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
 
 	_monster.create("Mobbie");
-	_monster.setMesh("Mobbie", "WereVixen.mesh");
+	_monster.setMesh("Mobbie", "Spider.mesh", 0);
 	_monster.setPosition(Ogre::Vector3(1708, 20, 2005));
-	_monster.setScale(Ogre::Vector3(5, 5, 5));
-	_monster.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
+	_monster.setScale(Ogre::Vector3(2, 2, 2));
+	_monster.setRotation(Ogre::Radian(0), Ogre::Radian(3.14), Ogre::Radian(0));
 	
 	_streetLamp.create("StreetLamp");
 	_streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
@@ -172,20 +172,17 @@ void Game::update(unsigned long milliseconds)
 		gQuit = true;
 
 	if(_handler->isPressingKey(OIS::KC_UP))
-		_werewolf.walk();
+		_werewolf.setAction(Action::ACT_WALK);
 
 	if(_handler->isPressingKey(OIS::KC_D))
 		_monster.setHealth(-100);
-
-	if(_monster.health() <= 0)
-		_monster.die();
-
+	
 	// calculate monster movement
 	_monster.updateAI(seconds);
 		
 	// update
-	_werewolf.update(seconds);
-	_monster.update(seconds);
+	_werewolf.update(seconds*5);
+	_monster.update(seconds*5);
 
 	// fix heights
 	Ogre::Real Y = mTerrainGroup->getHeightAtWorldPosition(_werewolf.position());

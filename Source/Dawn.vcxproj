@@ -99,7 +99,6 @@
   <ItemGroup>
     <ClCompile Include="AnimatedObject.cpp" />
     <ClCompile Include="BasicAI.cpp" />
-    <ClCompile Include="Creature.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -113,7 +112,6 @@
     <ClInclude Include="AnimatedObject.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="BasicAI.h" />
-    <ClInclude Include="Creature.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Globals.h" />

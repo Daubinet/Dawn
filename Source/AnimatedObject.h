@@ -12,9 +12,10 @@ public:
 	~AnimatedObject();
 		
 	void create(std::string name);
-	virtual void setMesh(std::string name, std::string file);
+	void setMesh(std::string name, std::string file, unsigned long animations = Action::getFlag(Action::ACT_NUM)-1);
 
-	virtual void update(double seconds);
+	void setAction(Action::Type action);
+	void update(double seconds);
 		
 	// Sets
 	void setPosition(Ogre::Vector3 v) { _node->setPosition(v); }
@@ -31,11 +32,13 @@ public:
 	Ogre::Quaternion rotation() { return _node->getOrientation(); }
 
 protected:
-	void setAnimation(Ogre::AnimationState *anim, bool loop=true);
-
 	Ogre::Entity *_mesh;
 	Ogre::SceneNode *_node;	
-	Ogre::AnimationState *_anim;
+	Ogre::AnimationState *_anim[Action::ACT_NUM];
+	bool _idleSinceUpdate;
+
+	Action::Type _actionType;
+	unsigned long _animations;
 };
 
 

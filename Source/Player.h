@@ -1,9 +1,9 @@
 #ifndef _PLAYER_H_
 #define _PLAYER_H_
 
-#include "Creature.h"
+#include "AnimatedObject.h"
 
-class Player : public Creature
+class Player : public AnimatedObject
 {
 public:
 	Player() {}
