@@ -13,5 +13,7 @@ void Mob::setBehavior(BasicAI::Behavior behavior)
 
 void Mob::updateAI(double seconds)
 {
-	_actionType = _basicAI.getNextAction();
+	_basicAI.getNextAction(&_actionType, &_actionModif);
+	if(_actionType != Action::ACT_IDLE)
+		_idleSinceUpdate = false;
 }

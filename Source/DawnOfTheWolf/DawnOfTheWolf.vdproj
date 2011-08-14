@@ -117,6 +117,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_10211799B0A14216B347B3BF04F2FE80"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_12568638EC494BCDA92D0E34A373B740"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -184,6 +190,12 @@
         "Entry"
         {
         "MsmKey" = "8:_1A79A7BB8FC44867AA7A50046A8730A1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1A8274CFD9714E4A98B18D9917AEAC50"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -459,6 +471,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_483CB2950EE94FF38981047A5DA6C4BF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_49C7CAD775374A62B9410041921A7BB3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -472,12 +490,6 @@
         "Entry"
         {
         "MsmKey" = "8:_4A4A6BACFF254EF0821EC87E9D318F7F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4B35E62279734F469B33FB324ABD201D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -520,6 +532,12 @@
         "Entry"
         {
         "MsmKey" = "8:_55D5612E776947C3A4E2D435A00C5716"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5648991CD04048548005F2A6EF18A2E1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -580,18 +598,6 @@
         "Entry"
         {
         "MsmKey" = "8:_5E60A56240E349ACB62D1BFDBBD8EC27"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5EC072606EC144B98C50D2693B31AEB0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_602E352A80A2442E8C0D4EAA593FCC2B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -747,6 +753,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_75ED1B22A05B456299745C845F198564"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7818982BACFC4A58958048111CBBA1CD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -885,6 +897,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8AD423CA07ED46F2BF5F666E9FB33700"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8B099DE0CB6A400DB4E7CED179017574"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -897,7 +915,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8EFC6F3CF591443697ABCB3E38EA982F"
+        "MsmKey" = "8:_8E9CB786546349A6878BEB15B3301BEA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1089,12 +1107,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A67C180842244DDA8DD8B95086625BBC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_A6EA724E3C4645A49264CB53CE41F0AF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1215,6 +1227,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BC3246CAA3F94EEE9F7BE9013AF1D6EF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BC88FFFD6C8B42528D20E30AA1F9AB95"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1293,13 +1311,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4EC478E1AF445F78296F37785A20492"
+        "MsmKey" = "8:_C4B1A740A8A245BFB2F0898AA37CDFFE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C8F26DB495DE401994D4E6794A2DE10B"
+        "MsmKey" = "8:_C4EC478E1AF445F78296F37785A20492"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1497,12 +1515,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DF51B77BEE484A0191399D17D753B348"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DF968AF79BA143D393078D5CA5F265B9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1516,6 +1528,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E08717E371164A3EAD5C5B829471EFE2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E15BDFD32A2A4B46B08CD156AEB70904"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1659,6 +1677,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_EF88D3450211448682C9667D7DEF8668"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F026FE6A087A4C78B3492838A37A7003"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1701,6 +1725,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F950818E6F944CDAA4DB1FE57B615521"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F9520BAB9912473DBDA3758FC2A0BF2A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1714,12 +1744,6 @@
         "Entry"
         {
         "MsmKey" = "8:_F9F27CEE69E545498DA9B8BAFD985087"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FBFB82AAF4664F4494CE91D6973B4B33"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2202,6 +2226,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10211799B0A14216B347B3BF04F2FE80"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\Scene.material"
+            "TargetName" = "8:Scene.material"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_12568638EC494BCDA92D0E34A373B740"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\programs\\Swizzle.gp"
@@ -2428,6 +2472,26 @@
             "TargetName" = "8:nm_lf.png"
             "Tag" = "8:"
             "Folder" = "8:_8886368883D849128E02E8D214FFE042"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1A8274CFD9714E4A98B18D9917AEAC50"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\Spider_SphereNew.tga"
+            "TargetName" = "8:Spider_SphereNew.tga"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3342,6 +3406,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_483CB2950EE94FF38981047A5DA6C4BF"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\Spider.mesh"
+            "TargetName" = "8:Spider.mesh"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_49C7CAD775374A62B9410041921A7BB3"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\programs\\OldTV.cg"
@@ -3388,26 +3472,6 @@
             "TargetName" = "8:DepthShadowmap.material"
             "Tag" = "8:"
             "Folder" = "8:_A7A916635783445D9EAA829178C0AEEF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B35E62279734F469B33FB324ABD201D"
-            {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\textures\\WereVixenTextures.png"
-            "TargetName" = "8:WereVixenTextures.png"
-            "Tag" = "8:"
-            "Folder" = "8:_8886368883D849128E02E8D214FFE042"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3548,6 +3612,26 @@
             "TargetName" = "8:Hurt.material"
             "Tag" = "8:"
             "Folder" = "8:_A7A916635783445D9EAA829178C0AEEF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5648991CD04048548005F2A6EF18A2E1"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\StreetLamp1.material"
+            "TargetName" = "8:StreetLamp1.material"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3748,46 +3832,6 @@
             "TargetName" = "8:varianceshadowreceivervp.cg"
             "Tag" = "8:"
             "Folder" = "8:_BA65C84E66D04F0292E2D9442ACD681B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5EC072606EC144B98C50D2693B31AEB0"
-            {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixen.mesh"
-            "TargetName" = "8:WereVixen.mesh"
-            "Tag" = "8:"
-            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_602E352A80A2442E8C0D4EAA593FCC2B"
-            {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\SellingHouse.material"
-            "TargetName" = "8:SellingHouse.material"
-            "Tag" = "8:"
-            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4302,6 +4346,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_75ED1B22A05B456299745C845F198564"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixen.mesh"
+            "TargetName" = "8:WereVixen.mesh"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7818982BACFC4A58958048111CBBA1CD"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\scripts\\Invert.material"
@@ -4762,6 +4826,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8AD423CA07ED46F2BF5F666E9FB33700"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\SellingHouse.mesh"
+            "TargetName" = "8:SellingHouse.mesh"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8B099DE0CB6A400DB4E7CED179017574"
             {
             "SourcePath" = "8:..\\..\\Bin\\cg.dll"
@@ -4802,10 +4886,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8EFC6F3CF591443697ABCB3E38EA982F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8E9CB786546349A6878BEB15B3301BEA"
             {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\StreetLamp1.material"
-            "TargetName" = "8:StreetLamp1.material"
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixenTextures.png"
+            "TargetName" = "8:WereVixenTextures.png"
             "Tag" = "8:"
             "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
@@ -5442,26 +5526,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A67C180842244DDA8DD8B95086625BBC"
-            {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\SellingHouse.mesh"
-            "TargetName" = "8:SellingHouse.mesh"
-            "Tag" = "8:"
-            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6EA724E3C4645A49264CB53CE41F0AF"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\programs\\GlassFP.cg"
@@ -5862,6 +5926,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BC3246CAA3F94EEE9F7BE9013AF1D6EF"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixen.material"
+            "TargetName" = "8:WereVixen.material"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BC88FFFD6C8B42528D20E30AA1F9AB95"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\textures\\normalNoiseColor.png"
@@ -6122,12 +6206,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4EC478E1AF445F78296F37785A20492"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4B1A740A8A245BFB2F0898AA37CDFFE"
             {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\scripts\\Bloom2.material"
-            "TargetName" = "8:Bloom2.material"
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixen.skeleton"
+            "TargetName" = "8:WereVixen.skeleton"
             "Tag" = "8:"
-            "Folder" = "8:_A7A916635783445D9EAA829178C0AEEF"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6142,12 +6226,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C8F26DB495DE401994D4E6794A2DE10B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4EC478E1AF445F78296F37785A20492"
             {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\StreetLamp1.mesh"
-            "TargetName" = "8:StreetLamp1.mesh"
+            "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\scripts\\Bloom2.material"
+            "TargetName" = "8:Bloom2.material"
             "Tag" = "8:"
-            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Folder" = "8:_A7A916635783445D9EAA829178C0AEEF"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6802,26 +6886,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF51B77BEE484A0191399D17D753B348"
-            {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixen.skeleton"
-            "TargetName" = "8:WereVixen.skeleton"
-            "Tag" = "8:"
-            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DF968AF79BA143D393078D5CA5F265B9"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\textures\\texmap2.jpg"
@@ -6868,6 +6932,26 @@
             "TargetName" = "8:mrttestfp.hlsl"
             "Tag" = "8:"
             "Folder" = "8:_BA65C84E66D04F0292E2D9442ACD681B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E15BDFD32A2A4B46B08CD156AEB70904"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\Spider.skeleton"
+            "TargetName" = "8:Spider.skeleton"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7342,6 +7426,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EF88D3450211448682C9667D7DEF8668"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\StreetLamp1.mesh"
+            "TargetName" = "8:StreetLamp1.mesh"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F026FE6A087A4C78B3492838A37A7003"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\programs\\Blur0_vs.glsl"
@@ -7482,6 +7586,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F950818E6F944CDAA4DB1FE57B615521"
+            {
+            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\SellingHouse.material"
+            "TargetName" = "8:SellingHouse.material"
+            "Tag" = "8:"
+            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F9520BAB9912473DBDA3758FC2A0BF2A"
             {
             "SourcePath" = "8:..\\..\\Bin\\Data\\materials\\programs\\varianceshadowcasterfp.cg"
@@ -7528,26 +7652,6 @@
             "TargetName" = "8:Bloom_ps20.hlsl"
             "Tag" = "8:"
             "Folder" = "8:_BA65C84E66D04F0292E2D9442ACD681B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FBFB82AAF4664F4494CE91D6973B4B33"
-            {
-            "SourcePath" = "8:..\\..\\Bin\\Data\\models\\WereVixen.material"
-            "TargetName" = "8:WereVixen.material"
-            "Tag" = "8:"
-            "Folder" = "8:_564313FF2E954665892240B0082A9A90"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7836,7 +7940,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DawnOfTheWolf"
         "ProductCode" = "8:{CEA13EEB-4ADE-4CAD-A880-FE4E7FBE038D}"
-        "PackageCode" = "8:{DA88D057-947A-40D1-A4D9-A6F87DFDF6FC}"
+        "PackageCode" = "8:{B87CC904-E990-42B4-82BC-59609E6FEAE9}"
         "UpgradeCode" = "8:{2D76D6CD-2CAD-48FE-AD51-84F2638729C0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

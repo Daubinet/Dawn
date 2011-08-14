@@ -13,7 +13,7 @@ public:
 	void setStats(MobStats *stats) { _stats = stats; }
 	void setBehavior(BasicAI::Behavior behavior);
 
-	Action::Type getNextAction();
+	void getNextAction(Action::Type *act, Action::Modifier *mod);
 
 private:
 	Behavior _behavior;

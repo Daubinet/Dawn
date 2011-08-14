@@ -23,7 +23,7 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	_camera = camera;
 	
 	gSceneManager->setAmbientLight(Ogre::ColourValue(0.5, 0.5, 0.5));
-	gSceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_ADDITIVE);
+	gSceneManager->setShadowTechnique(Ogre::SHADOWTYPE_STENCIL_MODULATIVE);
 	
 	Ogre::Vector3 lightdir(0.55, -0.3, 0.75); lightdir.normalise();  
 	Ogre::Light* light = gSceneManager->createLight("tstLight"); 
@@ -31,7 +31,6 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	light->setDirection(lightdir); 
 	light->setDiffuseColour(Ogre::ColourValue::White); 
 	light->setSpecularColour(Ogre::ColourValue(0.4, 0.4, 0.4));
-	gSceneManager->setAmbientLight(Ogre::ColourValue(0.2, 0.2, 0.2));
 
 	mTerrainGlobals = OGRE_NEW Ogre::TerrainGlobalOptions(); 
 	mTerrainGroup = OGRE_NEW Ogre::TerrainGroup(gSceneManager, Ogre::Terrain::ALIGN_X_Z, 513, 12000.0f); 
@@ -58,13 +57,13 @@ void Game::initialize(Ogre::Camera *camera, EventManager *handler)
 	_werewolf.setMesh("Werewolf", "WereVixen.mesh");
 	_werewolf.setPosition(Ogre::Vector3(1693, 20, 2090));
 	_werewolf.setScale(Ogre::Vector3(5, 5, 5));
-	_werewolf.setRotation(Ogre::Radian(1.57), Ogre::Radian(0), Ogre::Radian(3.14));
+	_werewolf.rotate(Ogre::Radian(1.57), Ogre::Radian(3.14), Ogre::Radian(0));
 
 	_monster.create("Mobbie");
-	_monster.setMesh("Mobbie", "Spider.mesh", 0);
+	_monster.setMesh("Mobbie", "Spider.mesh", Action::ACT_IDLE | Action::ACT_WALK);
 	_monster.setPosition(Ogre::Vector3(1708, 20, 2005));
 	_monster.setScale(Ogre::Vector3(2, 2, 2));
-	_monster.setRotation(Ogre::Radian(0), Ogre::Radian(3.14), Ogre::Radian(0));
+	_monster.rotate(Ogre::Radian(0), Ogre::Radian(3.14), Ogre::Radian(0));
 	
 	_streetLamp.create("StreetLamp");
 	_streetLamp.setMesh("StreetLamp", "StreetLamp1.mesh");
@@ -171,9 +170,27 @@ void Game::update(unsigned long milliseconds)
 	if(_handler->pressedKey(OIS::KC_ESCAPE))
 		gQuit = true;
 
-	if(_handler->isPressingKey(OIS::KC_UP))
-		_werewolf.setAction(Action::ACT_WALK);
+	// move front
+	if(_handler->isPressingKey(OIS::KC_UP)) {
+		_werewolf.setModifier(Action::MDF_FRONT);
 
+		if(_handler->isPressingKey(OIS::KC_Z))
+			_werewolf.setAction(Action::ACT_RUN);
+		else
+			_werewolf.setAction(Action::ACT_WALK);
+	}
+	// move back
+	if(_handler->isPressingKey(OIS::KC_DOWN)) {
+		_werewolf.setModifier(Action::MDF_BACK);
+		_werewolf.setAction(Action::ACT_WALK);
+		_werewolf.reverseAnim();
+	}
+	// turn
+	if(_handler->isPressingKey(OIS::KC_LEFT))
+		_werewolf.setModifier(Action::MDF_LEFT);
+	if(_handler->isPressingKey(OIS::KC_RIGHT))
+		_werewolf.setModifier(Action::MDF_RIGHT);
+	
 	if(_handler->isPressingKey(OIS::KC_D))
 		_monster.setHealth(-100);
 	
@@ -181,8 +198,8 @@ void Game::update(unsigned long milliseconds)
 	_monster.updateAI(seconds);
 		
 	// update
-	_werewolf.update(seconds*5);
-	_monster.update(seconds*5);
+	_werewolf.update(seconds);
+	_monster.update(seconds);
 
 	// fix heights
 	Ogre::Real Y = mTerrainGroup->getHeightAtWorldPosition(_werewolf.position());

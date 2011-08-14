@@ -5,19 +5,23 @@ void BasicAI::setBehavior(BasicAI::Behavior behavior)
 	_behavior = behavior;
 }
 
-Action::Type BasicAI::getNextAction()
+void BasicAI::getNextAction(Action::Type *act, Action::Modifier *mod)
 {
-	if(_stats->health < 0)
-		return Action::ACT_DIE;
+	if(_stats->health < 0) {
+		*act = Action::ACT_DIE;
+		return;
+	}
 	
 	switch(_behavior)
 	{
 	case AI_PATROLL:
-		return Action::ACT_WALK;
+		*act = Action::ACT_WALK;
+		*mod = Action::MDF_FRONT;
 		break;
 	// should never happen
 	default:
-		return Action::ACT_WALK;
+		*act = Action::ACT_WALK;
+		*mod = Action::MDF_FRONT;
 		break;
 	}
 }

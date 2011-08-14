@@ -3,7 +3,7 @@
 #include "Globals.h"
 
 AnimatedObject::AnimatedObject()
-: _node(NULL), _mesh(NULL), _actionType(Action::ACT_IDLE), _idleSinceUpdate(true)
+: _node(NULL), _mesh(NULL), _actionType(Action::ACT_IDLE), _idleSinceUpdate(true), _reverseAnim(false)
 {
 	for(int i = 0; i < Action::ACT_NUM; ++i)
 		_anim[i] = NULL;
@@ -11,6 +11,11 @@ AnimatedObject::AnimatedObject()
 
 AnimatedObject::~AnimatedObject()
 {
+}
+
+void AnimatedObject::setModifier(Action::Modifier mod)
+{
+	_actionModif = (Action::Modifier)(_actionModif | mod);
 }
 
 void AnimatedObject::setAction(Action::Type action)
@@ -55,6 +60,8 @@ void AnimatedObject::setMesh(std::string name, std::string file, unsigned long a
 		_anim[Action::ACT_IDLE] = _mesh->getAnimationState("Idle");
 	if(_animations & Action::getFlag(Action::ACT_WALK))
 		_anim[Action::ACT_WALK] = _mesh->getAnimationState("Walk");
+	if(_animations & Action::getFlag(Action::ACT_RUN))
+		_anim[Action::ACT_RUN] = _mesh->getAnimationState("Run");
 
 	if(_animations & Action::getFlag(Action::ACT_DIE)) {
 		_anim[Action::ACT_DIE] = _mesh->getAnimationState("Fall");
@@ -68,17 +75,35 @@ void AnimatedObject::update(double seconds)
 	if(_idleSinceUpdate)
 		setAction(Action::ACT_IDLE);
 
+	Ogre::Vector3 pos = position();
+	Ogre::Vector3 dir = direction();
+	Ogre::Real speed, rotSpeed=1.57;
+
 	switch(_actionType)
 	{
 	case Action::ACT_WALK:
-		Ogre::Vector3 pos = position();
-		setPosition(Ogre::Vector3(pos.x, pos.y, pos.z-10*seconds));
+		speed = 10;
+		break;
+	case Action::ACT_RUN:
+		speed = 20;
 		break;
 	}
 
+	if(_actionModif & Action::MDF_LEFT)
+		rotate((Ogre::Radian)0,(Ogre::Radian)(rotSpeed*seconds),(Ogre::Radian)0);
+	if(_actionModif & Action::MDF_RIGHT)
+		rotate((Ogre::Radian)0,(Ogre::Radian)(-rotSpeed*seconds),(Ogre::Radian)0);
+	if(_actionModif & Action::MDF_FRONT)
+		setPosition(position()+dir*speed*seconds);
+	if(_actionModif & Action::MDF_BACK)
+		setPosition(position()-dir*speed*seconds);
+
 	// mesh/node updates
+	if(_reverseAnim) seconds = -seconds;
 	if(_anim[_actionType]) 
 		_anim[_actionType]->addTime(seconds);
 
 	_idleSinceUpdate=true;
+	_actionModif = Action::MDF_NONE;
+	_reverseAnim=false;
 }
